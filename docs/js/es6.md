@@ -8,6 +8,8 @@
 - let
   - 不会有变量提升
   - 创建自己的作用域，不会挂载在 window 上
+  - 暂时性死区
+  - 不能重复声明
 - const
 
   - 申明常量基本类型（string/number/boolean/null/undefined）的值不能改，引用类型（object/array）引用地址不能更改
@@ -30,6 +32,97 @@
   // 直接赋值一个新的对象不行
   obj = { c: 3 }; //error
   ```
+
+  - 如果需要保证对象的属性也不能更改可以使用`Object.freeze`
+
+  ```js
+  const freeze = obj => {
+    Object.freeze(obj);
+    Object.keys(obj).forEach(key => {
+      if (typeof obj[key] === 'object') {
+        freeze(obj);
+      }
+    });
+  };
+  ```
+
+## 解构
+
+- 对象
+
+```js
+const a = {
+  x: 1,
+  y: 2,
+  z: 3,
+};
+
+const { x,y:y2 rest } = a;
+// x=>1,
+// 可以为变量y重新命名为y2
+// reset=>{z:3}
+```
+
+- 为已经提前声明的变量解构
+
+```js
+let x;
+{x} ={x:1};//错误，不能这么写
+({x}={x:1});//ok
+```
+
+- 字符串
+
+  ```js
+  const [a, b] = 'hello';
+  //a=>h;b=>e;
+  ```
+
+- set
+
+```js
+let [x, y] = new Set([1, 2]);
+// x=>1;y=>2
+```
+
+- 设置默认值
+
+```js
+// 当没有对应的值时，会使用默认值
+let { a, b = 2, c = 3 } = { a: 1, c: null };
+// a=>1;b=>2;c=>null
+// 对null使用默认值不会成功
+let [x, y = 2] = [1];
+// y=>2
+```
+
+## 展开运算符
+
+```js
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const obj3 = { ...obj1, ...obj2 }; // {a:1,b:2}
+
+const arr1 = [1, 2];
+const arr2 = [2, 3];
+const arr3 = [...arr1, ...arr2]; // [1,2,2,3]
+// 交换两个变量的值
+let a = 1;
+let b = 2;
+[a, b] = [b, a];
+```
+
+## set
+
+集合中不能有重复的项
+
+- 数组
+
+```js
+const arr = [1, 2, 3];
+const [a, ...rest] = arr;
+// a=>1, rest=>[2,3]
+```
 
 ## class
 
