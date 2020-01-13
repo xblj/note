@@ -1,6 +1,6 @@
 const path = require('path');
 const cheerio = require('cheerio');
-const { AsyncSeriesWaterfallHook } = require('../../tapable');
+const { AsyncSeriesWaterfallHook } = require('tapable');
 const childCompiler = require('./lib/compiler');
 
 /**
@@ -37,7 +37,7 @@ class HtmlWebpackPlugin {
     this.options = {
       template: path.join(__dirname, './template.html'),
       filename: 'index.html',
-      ...options
+      ...options,
     };
   }
 
@@ -113,7 +113,7 @@ class HtmlWebpackPlugin {
         // 将需要输出到文件系统的添加到assets上
         compilation.assets[this.childCompilationOutputName] = {
           source: () => html,
-          size: () => html.length
+          size: () => html.length,
         };
 
         callback();
@@ -204,8 +204,8 @@ class HtmlWebpackPlugin {
         selfClose: true,
         attributes: {
           href: stylePath,
-          rel: 'stylesheet'
-        }
+          rel: 'stylesheet',
+        },
       };
     });
 
@@ -215,14 +215,14 @@ class HtmlWebpackPlugin {
         selfClose: false,
         attributes: {
           src: scriptPath,
-          type: 'text/javascript'
-        }
+          type: 'text/javascript',
+        },
       };
     });
 
     return {
       head,
-      body
+      body,
     };
   }
 
@@ -234,7 +234,7 @@ class HtmlWebpackPlugin {
   htmlWebpackPluginAssets(chunks) {
     const assets = {
       js: [],
-      css: []
+      css: [],
     };
 
     chunks.forEach(chunk => {
@@ -265,7 +265,7 @@ class HtmlWebpackPlugin {
     return chunks.filter(chunk => {
       const {
         names: [chunkName],
-        initial
+        initial,
       } = chunk;
       if (!chunkName || !initial) return false;
       return true;

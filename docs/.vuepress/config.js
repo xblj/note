@@ -19,18 +19,28 @@ module.exports = {
         items: [
           // { text: '基础', link: '/webpack/basic' },
           // { text: 'plugin', link: '/webpack/plugin' },
-          { text: 'html-webpack-plugin分析实现', link: '/webpack/html-webpack-plugin' },
+          {
+            text: 'html-webpack-plugin分析实现',
+            link: '/webpack/html-webpack-plugin',
+          },
           // { text: 'loader', link: '/webpack/loader4' },
-        ]
+        ],
+      },
+      {
+        text: 'react',
+        items: [
+          {
+            text: 'redux',
+            link: '/react/redux/',
+          },
+        ],
       },
     ],
     sidebar: {
-      '/js/': [
-        'es6'
-      ],
+      '/js/': ['es6'],
       // '/webpack': [
       //   'plugin'
       // ]
-    }
-  }
-}
+    },
+  },
+};

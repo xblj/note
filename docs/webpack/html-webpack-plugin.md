@@ -114,22 +114,22 @@ export default class HelloWebpackPlugin {
 
 > ./template.html
 
-<<< @/code/webpack/html-webpack-plugin/template.html
+<<< @/source/webpack/html-webpack-plugin/template.html
 
 ### 主模块
 
 > ./index.js
 
-<<< @/code/webpack/html-webpack-plugin/index.js
+<<< @/source/webpack/html-webpack-plugin/index.js
 
 ### 子编译
 
 > ./lib/compiler.js
 
-<<< @/code/webpack/html-webpack-plugin/lib/compiler.js
+<<< @/source/webpack/html-webpack-plugin/lib/compiler.js
 
 ### loader
 
 > ./lib/loader
 
-<<< @/code/webpack/html-webpack-plugin/lib/loader.js
+<<< @/source/webpack/html-webpack-plugin/lib/loader.js
