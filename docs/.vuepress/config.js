@@ -35,6 +35,10 @@ module.exports = {
           },
         ],
       },
+      {
+        text: '杂记',
+        link: '/other/'
+      },
     ],
     sidebar: {
       '/js/': ['es6'],
