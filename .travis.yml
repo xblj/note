@@ -5,6 +5,9 @@ install:
   - npm install
 script:
   - npm run build
+  - cd dist
+  - echo 'xblj.top' > CNAME
+  - cd -
 deploy:
   provider: pages
   skip_cleanup: true
