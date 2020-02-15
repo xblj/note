@@ -137,8 +137,8 @@
    // fn1 result1
    ```
 
-2. [createStore](/react/redux/createStore)
+2. [createStore](/react/redux/createStore.html)
 
-3. [combineReducers](/react/redux/combineReducers)
+3. [combineReducers](/react/redux/combineReducers.html)
 
-4. [bindActionCreators](/react/redux/bindActionCreators)
+4. [bindActionCreators](/react/redux/bindActionCreators.html)

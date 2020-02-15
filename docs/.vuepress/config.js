@@ -21,7 +21,7 @@ module.exports = {
           // { text: 'plugin', link: '/webpack/plugin' },
           {
             text: 'html-webpack-plugin分析实现',
-            link: '/webpack/html-webpack-plugin',
+            link: '/webpack/html-webpack-plugin.html',
           },
           // { text: 'loader', link: '/webpack/loader4' },
         ],
