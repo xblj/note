@@ -11,5 +11,5 @@ features:
   - title: react全家桶
     details: 1. redux实现原理;2.react-redux
 
-footer: xb
+footer: null
 ---
