@@ -36,8 +36,12 @@ module.exports = {
         ],
       },
       {
+        text: '每日一题',
+        link: '/question/',
+      },
+      {
         text: '杂记',
-        link: '/other/'
+        link: '/other/',
       },
     ],
     sidebar: {
